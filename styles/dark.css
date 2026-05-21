@@ -1,9 +1,9 @@
 /* Тёмная тема при явном классе */
 :root.theme-dark {
   --bg-color: #000028;
-  --text-color: #f1b2ce;
+  --text-color: #FFFFFF;
   --accent-color: #ff0070;
-  --title-color: #fb00ff;
+  --title-color: #FFFFFF;
   --decor-color: #ff0070;
   --shadow-color: #ff0070;
   --bg-image: url(../images/cover-image-dark.png);
