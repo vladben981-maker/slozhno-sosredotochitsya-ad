@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="theme-dark">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
     <title>Сложно сосредоточиться</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/dark.css" />
+    <link rel="stylesheet" href="./styles/light.css" />
     <script src="./scripts/script.js"></script>
   </head>
   <body class="page">
+
+    <!-- ШАПКА -->
     <header class="header decorated-zone">
       <nav class="header__theme-menu">
         <ul class="header__theme-menu-list">
@@ -35,6 +44,203 @@
           </li>
         </ul>
       </nav>
+
+      <span class="header__rec" aria-hidden="true"></span>
+
+      <h1 class="header__title">no focus</h1>
+
+      <p class="header__description title-decor">
+        Что делать, когда не можешь делать ничего<br />
+        Или почему мозг отказывается работать, а&nbsp;мы&nbsp;продолжаем его
+        умолять
+      </p>
     </header>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <main class="content">
+
+      <!-- СЕКЦИЯ 1: Почему сосредоточиться так сложно -->
+      <section class="content__section">
+        <h2 class="content__section-title">
+          Почему сосредоточиться так сложно
+        </h2>
+        <div class="content__cards">
+          <article class="content__card">
+            <h3 class="content__card-title title-decor">
+              Многозадачность
+            </h3>
+            <p class="content__card-text">
+              Особенно сложно сосредоточиться, когда задач много и&nbsp;все они
+              —&nbsp;важные. Где же легендарная многозадачность, когда она так
+              нужна вам (и всем нанимателям)?
+            </p>
+            <p class="content__card-text">
+              А&nbsp;дело в&nbsp;том, что её просто не&nbsp;существует. Мозг
+              никогда не делает два дела одновременно. Он только переключается
+              между ними, и&nbsp;каждый раз теряет время. Чем больше
+              переключений, тем больше потерь.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- СЕКЦИЯ 2: Что мешает нам сосредоточиться? -->
+      <section class="content__section">
+        <h2 class="content__section-title">
+          Что мешает нам сосредоточиться?
+        </h2>
+        <div class="content__cards">
+          <article class="content__card">
+            <h3 class="content__card-title title-decor">
+              Социальные сети
+            </h3>
+            <p class="content__card-text">
+              Ваши новостные ленты практически бесконечны, а&nbsp;время
+              ограничено. Удалите соцсети с телефона хотя бы на&nbsp;рабочие
+              часы.
+            </p>
+          </article>
+          <article class="content__card">
+            <h3 class="content__card-title title-decor">
+              Еда
+            </h3>
+            <p class="content__card-text">
+              «Быстрые углеводы» — ваш уровень концентрации резко растёт,
+              а&nbsp;потом — не&nbsp;менее резко падает. За&nbsp;энергией
+              лучше обращаться к&nbsp;белку, овощам и&nbsp;фруктам.
+            </p>
+          </article>
+          <article class="content__card">
+            <h3 class="content__card-title title-decor">
+              Гаджеты
+            </h3>
+            <p class="content__card-text">
+              Да-да, это не только смартфоны. Любые&nbsp;устройства связи
+              и&nbsp;развлечения мешают сосредоточиться — от&nbsp;умных часов
+              до&nbsp;телевизора с умным пультом. Не зря перед школьными
+              экзаменами участников просят сдать телефоны.
+            </p>
+          </article>
+          <article class="content__card">
+            <h3 class="content__card-title title-decor">
+              Нарушение режима сна
+            </h3>
+            <p class="content__card-text">
+              Нехватка&nbsp;сна <a href="#" class="content__link">ухудшает</a>
+              когнитивные способности, мешает запоминать и накапливать
+              новые знания, возможности&nbsp;для&nbsp;концентрации
+              <a href="#" class="content__link">резко</a>
+              сокращаются.
+            </p>
+          </article>
+          <article class="content__card">
+            <h3 class="content__card-title title-decor">
+              Стресс
+            </h3>
+            <p class="content__card-text">
+              Стресс сам истощает мозг. Если вы&nbsp;находитесь
+              в&nbsp;состоянии хронического стресса, как многие из&nbsp;нас,
+              ваш мозг пытается«выжить», а не развиваться.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- СЕКЦИЯ 3: Как помочь мозгу сосредоточиться -->
+      <section class="content__section content__section_how">
+        <h2 class="content__section-title">
+          Как помочь мозгу сосредоточиться?
+        </h2>
+        <div class="content__cards">
+          <article class="content__card">
+            <h3 class="content__card-title title-decor">
+              5 простых (не очень) советов
+            </h3>
+            <h4 class="content__advice-title">Представьте небо и&nbsp;облака</h4>
+            <p class="content__card-text">
+              Или листья в ручье. Тут важнее всего — медленное развитие
+              ситуации. Подойдёт любая приятная картина, в&nbsp;которой
+              что-то будет двигаться.
+            </p>
+            <h4 class="content__advice-title">Откажитесь от&nbsp;стимуляторов</h4>
+            <p class="content__card-text">
+              Алкоголь, кофе, энергетики, даже жвачка с ментолом —
+              всё это, по сути, костыли. A&nbsp;мозг прекрасно справляется
+              самостоятельно. И&nbsp;все они&nbsp;разрушают
+              естественную самооргани&shy;зацию.
+            </p>
+            <h4 class="content__advice-title">Задайте вопрос</h4>
+            <p class="content__card-text">
+              Помогает любое начало действия. Это особенно важно,
+              если вы&nbsp;стремитесь к&nbsp;новым знаниям: усвоить новую
+              информацию лучше всего, когда вы отчаянно хотите ее
+              изучить.
+            </p>
+            <h4 class="content__advice-title">Займитесь спортом</h4>
+            <p class="content__card-text">
+              Сейчас мы говорим о регулярных
+              тренировках, но&nbsp;адаптация не&nbsp;ограничивается
+              только физическими изменениями — много всего
+              происходит и&nbsp;в&nbsp;мозге. На&nbsp;тренировки
+              нужно <a href="#" class="content__link">выделять</a>
+              время.
+            </p>
+            <h4 class="content__advice-title">Читайте</h4>
+            <p class="content__card-text">
+              Настоящие книги, то&nbsp;есть без каких-либо
+              <a href="#" class="content__link">гиперссылок</a>,
+              лайков и&nbsp;возможности быстро проверить
+              почту. Это&nbsp;не так просто, как кажется, особенно
+              в&nbsp;первое время. Но&nbsp;со&nbsp;временем у&nbsp;вас
+              появится желание читать больше.
+            </p>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ГАЛЕРЕЯ -->
+    <section class="gallery">
+      <h2 class="gallery__title title-decor">А&nbsp;можно в&nbsp;картинках?</h2>
+      <div class="gallery__images">
+        <img
+          class="gallery__image gallery__image_sunset"
+          src="./images/sunset.png"
+          alt="Закат над горами с облаками оранжевого и розового цвета"
+          loading="lazy"
+        />
+        <img
+          class="gallery__image gallery__image_ice-cream"
+          src="./images/ice-cream.png"
+          alt="Мороженое в виде милых мультяшных шариков со смайликами"
+          loading="lazy"
+        />
+        <img
+          class="gallery__image gallery__image_tape"
+          src="./images/tape.png"
+          alt="Кассета с аудиозаписью на фоне цветных элементов"
+          loading="lazy"
+        />
+        <img
+          class="gallery__image gallery__image_books"
+          src="./images/books.png"
+          alt="Стопка книг с чашкой кофе сверху"
+          loading="lazy"
+        />
+        <img
+          class="gallery__image gallery__image_street"
+          src="./images/street.png"
+          alt="Улица города с деревьями и зданиями"
+          loading="lazy"
+        />
+      </div>
+    </section>
+
+    <!-- ФУТЕР -->
+    <footer class="footer decorated-zone">
+      <h2 class="footer__title">focus</h2>
+    </footer>
+
   </body>
 </html>
