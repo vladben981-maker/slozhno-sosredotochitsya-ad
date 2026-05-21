@@ -94,7 +94,6 @@
   grid-template-rows: 1fr auto 1fr;
   grid-template-columns: 1fr;
   padding: var(--space-m);
-  min-block-size: 100vh;
   min-block-size: 100dvh;
 }
 
@@ -293,7 +292,6 @@
   align-items: center;
   justify-items: center;
   padding: var(--space-m);
-  min-block-size: 100vh;
   min-block-size: 100dvh;
 }
 
