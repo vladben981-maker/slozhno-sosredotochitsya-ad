@@ -1,16 +1,20 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
+/* Тёмная тема при явном классе */
 :root.theme-dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --bg-color: #000028;
+  --text-color: #f1b2ce;
+  --accent-color: #ff0070;
+  --title-color: #fb00ff;
+  --decor-color: #ff0070;
+  --shadow-color: #ff0070;
+  --bg-image: url(../images/cover-image-dark.png);
+  --nav-btn-color: #ff0070;
+  --corner-color: #ff0070;
+  --card-title-bg: var(--accent-color);
+  --card-title-color: var(--bg-color);
+  --link-shadow: 2px 2px 0 var(--accent-color);
 }
 
-.theme-dark .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+/* Скрываем REC в тёмной теме — он показывается */
+:root.theme-dark .header__rec {
+  display: block;
 }

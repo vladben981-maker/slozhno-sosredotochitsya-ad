@@ -1,4 +1,39 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+:root {
+  /* Цвета тёмной темы (основная) */
+  --bg-color: #000028;
+  --text-color: #f1b2ce;
+  --accent-color: #ff0070;
+  --title-color: #fb00ff;
+  --decor-color: #ff0070;
+  --shadow-color: #ff0070;
+  --header-bg: transparent;
+
+  /* Фоновое изображение */
+  --bg-image: url(../images/cover-image-dark.png);
+
+  /* Шрифт */
+  --font-family: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Размер шрифта */
+  --font-size-base: 18px;
+
+  /* Отступы */
+  --space-s: 10px;
+  --space-m: 20px;
+  --space-l: clamp(20px, 3.2vw, 60px);
+
+  /* Цвет кнопки навигации */
+  --nav-btn-color: #ff0070;
+  --nav-btn-hover-border: #ff0070;
+  --nav-btn-active-border: #ff0070;
+
+  /* Декоративные углы */
+  --corner-color: #ff0070;
+
+  /* Ссылки */
+  --link-shadow: 2px 2px 0 var(--accent-color);
+
+  /* Карточки */
+  --card-title-bg: var(--accent-color);
+  --card-title-color: var(--bg-color);
+}

@@ -1,5 +1,408 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+/* ======================
+   ШРИФТЫ
+   ====================== */
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../fonts/IBMPlexMono-Regular.woff2') format('woff2'),
+       url('../fonts/IBMPlexMono-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../fonts/IBMPlexMono-Italic.woff2') format('woff2'),
+       url('../fonts/IBMPlexMono-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../fonts/IBMPlexMono-Bold.woff2') format('woff2'),
+       url('../fonts/IBMPlexMono-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ======================
+   СТРАНИЦА
+   ====================== */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text-color);
+  min-inline-size: 320px;
+}
+
+/* ======================
+   УТИЛИТЫ
+   ====================== */
+
+/* Заголовки на цветном фоне (шапка, карточки) */
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+/* ======================
+   ДЕКОРАТИВНАЯ ЗОНА (углы)
+   Используется в header и footer
+   ====================== */
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+/* Правый верхний угол */
+.decorated-zone::before {
+  inset-block-start: var(--space-m);
+  inset-inline-end: var(--space-m);
+  border-block-start: 1px solid var(--corner-color);
+  border-inline-end: 1px solid var(--corner-color);
+}
+
+/* Левый нижний угол */
+.decorated-zone::after {
+  inset-block-end: var(--space-m);
+  inset-inline-start: var(--space-m);
+  border-block-end: 1px solid var(--corner-color);
+  border-inline-start: 1px solid var(--corner-color);
+}
+
+/* ======================
+   ШАПКА
+   ====================== */
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  grid-template-columns: 1fr;
+  padding: var(--space-m);
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
+}
+
+/* REC — декоративный элемент, только в тёмной теме */
+.header__rec {
+  position: absolute;
+  inset-block-start: var(--space-m);
+  inset-inline-end: calc(var(--space-m) + 28px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent-color);
+  font-size: var(--font-size-base);
+  line-height: 1.39;
+  text-transform: uppercase;
+}
+
+.header__rec::after {
+  content: '';
+  display: inline-block;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
+.header__rec::before {
+  content: 'REC';
+}
+
+/* Навигация тем */
+.header__theme-menu {
+  align-self: center;
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+}
+
+.header__theme-menu-button {
+  padding: 2px 13px;
+  color: var(--nav-btn-color);
+  font-size: var(--font-size-base);
+  line-height: 1.39;
+  text-transform: lowercase;
+  outline: none;
+  border: 1px solid transparent;
+}
+
+.header__theme-menu-button:hover {
+  border-color: color-mix(in srgb, var(--nav-btn-color) 40%, transparent);
+  cursor: pointer;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end-color: var(--nav-btn-color);
+  outline: none;
+}
+
+.header__theme-menu-button_active {
+  border-color: var(--nav-btn-color);
+  pointer-events: none;
+}
+
+/* Главный заголовок */
+.header__title {
+  color: var(--title-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 0.825;
+  text-shadow: 4px 4px 0 var(--accent-color);
+  align-self: center;
+  margin-inline-start: -4px;
+}
+
+/* Подпись в шапке */
+.header__description {
+  align-self: center;
+  font-weight: 700;
+  font-size: var(--font-size-base);
+  line-height: 1.3;
+  padding: 4px 10px;
+  max-inline-size: 100%;
+}
+
+/* ======================
+   ОСНОВНОЙ КОНТЕНТ
+   ====================== */
+
+.content {
+  display: grid;
+  padding: 40px var(--space-m);
+  gap: 50px;
+}
+
+.content__section {
+  display: grid;
+  gap: var(--space-m);
+}
+
+.content__section-title {
+  color: var(--accent-color);
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.content__cards {
+  display: grid;
+  gap: var(--space-m);
+}
+
+.content__card {
+  display: grid;
+  gap: var(--space-s);
+}
+
+.content__card-title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  line-height: 1.3;
+  padding: 4px 10px;
+}
+
+.content__advice-title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-color);
+}
+
+.content__card-text {
+  font-size: var(--font-size-base);
+  line-height: 1.3;
+  color: var(--text-color);
+}
+
+/* Ссылки */
+.content__link {
+  text-decoration: none;
+  text-shadow: var(--link-shadow);
+}
+
+.content__link:hover {
+  border-block-end: 1px solid var(--text-color);
+}
+
+.content__link:focus {
+  outline: none;
+}
+
+.content__link:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+/* ======================
+   ГАЛЕРЕЯ
+   ====================== */
+
+.gallery {
+  padding: 0 var(--space-m) 40px;
+  display: grid;
+  gap: var(--space-m);
+}
+
+.gallery__title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  line-height: 1.3;
+  padding: 4px 10px;
+  display: inline-block;
+}
+
+.gallery__images {
+  display: grid;
+  gap: var(--space-m);
+}
+
+.gallery__image {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ======================
+   ФУТЕР
+   ====================== */
+
+.footer {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: var(--space-m);
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
+}
+
+.footer__title {
+  color: var(--title-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 0.825;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+/* ======================
+   АДАПТИВ: ПЛАНШЕТ (768px+)
+   ====================== */
+
+@media (width >= 768px) {
+
+  .header {
+    padding: var(--space-m);
+  }
+
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin-inline-start: calc(-1 * var(--space-m));
+  }
+
+  .header__description {
+    max-inline-size: 50%;
+    justify-self: end;
+  }
+
+  .content {
+    padding: 60px var(--space-m);
+    gap: 80px;
+  }
+
+  .content__section {
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-m);
+    align-items: start;
+  }
+
+  .content__section_how {
+    grid-template-columns: 1fr;
+  }
+
+  .content__section_how .content__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    padding: 0 var(--space-m) 60px;
+  }
+
+  .gallery__images {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+  }
+
+  .gallery__image_sunset {
+    grid-column: 1 / 3;
+  }
+
+  .gallery__image_ice-cream {
+    grid-column: 3 / 4;
+  }
+
+  .gallery__image_tape {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+
+  .gallery__image_books {
+    grid-column: 2 / 3;
+  }
+
+  .gallery__image_street {
+    grid-column: 2 / 4;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+/* ======================
+   АДАПТИВ: ДЕСКТОП (1024px+)
+   ====================== */
+
+@media (width >= 1024px) {
+
+  .header__theme-menu {
+    align-self: start;
+    justify-self: center;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .content {
+    padding: 60px 20px;
+  }
+
+  .content__section {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .content__section_how .content__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
